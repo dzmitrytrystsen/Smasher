@@ -12,7 +12,7 @@ public class BallScript : MonoBehaviour
     public Vector2 paddleToBallVector;
     public bool hasStarted = false;
 
-    // Cashed components references
+    // Cached components references
     public AudioSource myAudioSource;
 
     void Start ()
