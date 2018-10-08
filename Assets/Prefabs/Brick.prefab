@@ -81,7 +81,12 @@ MonoBehaviour:
   crackSound: {fileID: 8300000, guid: 3a966b61d831c3e4489e54cb1ad44f8f, type: 3}
   explosionVFX: {fileID: 1392595293805420, guid: 7079e5ca0a3aa564f9ecdbf42ad54c8e,
     type: 2}
+  maxHits: 3
+  damageSprite:
+  - {fileID: 21300000, guid: 565e3e21e31c7764f8a53744fbc4e84a, type: 3}
+  - {fileID: 21300000, guid: 6ea0a587bd50d1244abc82092a68c44f, type: 3}
   level: {fileID: 114796539114370754, guid: fb1c56f119dc69844bb14e25a9ee60cc, type: 2}
+  timesHit: 0
 --- !u!212 &212300045355525836
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.UIElements.GraphView;
 using UnityEngine;
 using Object = System.Object;
 
@@ -7,9 +9,14 @@ public class BrickScript : MonoBehaviour
 {
     [SerializeField] public AudioClip crackSound;
     [SerializeField] public GameObject explosionVFX;
+    [SerializeField] public int maxHits = 3;
+    [SerializeField] public Sprite[] damageSprite;
 
     // Cached reference
     public LevelScript level;
+
+    //state variables
+    [SerializeField] public int timesHit;
 
     private void Start()
     {
@@ -17,10 +24,31 @@ public class BrickScript : MonoBehaviour
             level = FindObjectOfType<LevelScript>(); // So after pressing Play, Engine will find and add needed object itself
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
+        HitsLogic();
+    }
+
+    public void HitsLogic()
+    {
+        timesHit++;
+
+        if (timesHit >= maxHits)
+        {
             DestroyBlock();
-            TriggerExplosion();
+        }
+
+        else
+        {
+            ShowNextSprite();
+        }
+
+    }
+
+    private void ShowNextSprite()
+    {
+        int spriteIndex = timesHit - 1;
+        GetComponent<SpriteRenderer>().sprite = damageSprite[spriteIndex];
     }
 
     public void DestroyBlock()
@@ -28,6 +56,7 @@ public class BrickScript : MonoBehaviour
         AudioSource.PlayClipAtPoint(crackSound, Camera.main.transform.position);
         Destroy(gameObject);
         level.SubtractBreakableBricks();
+        TriggerExplosion();
     }
 
     public void TriggerExplosion()
