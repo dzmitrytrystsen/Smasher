@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 61337651744788910}
   - component: {fileID: 114847622503478984}
   m_Layer: 0
-  m_Name: Brick
-  m_TagString: Untagged
+  m_Name: BreakableBrick
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crackSound: {fileID: 8300000, guid: 3a966b61d831c3e4489e54cb1ad44f8f, type: 3}
+  explosionVFX: {fileID: 0}
+  level: {fileID: 0}
 --- !u!212 &212519013643077602
 SpriteRenderer:
   m_ObjectHideFlags: 1
