@@ -51,3 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f517588ae294c8747bd87d739f172359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  breakableBricks: 0
+  BricksCounterText: {fileID: 0}
+  sceneLoader: {fileID: 114042611445963886, guid: 508e72ab8dc1b264d86861de57d40fc8,
+    type: 2}

@@ -19,9 +19,10 @@ public class BallScript : MonoBehaviour
     {
         paddleToBallVector = transform.position;
         myAudioSource = GetComponent<AudioSource>();
+        Destroy(GameObject.Find("Canvas"), 3f);
     }
-	
-	void Update ()
+
+    void Update ()
     {
         if (!hasStarted)
         {
