@@ -1412,11 +1412,6 @@ Prefab:
     m_Modifications:
     - target: {fileID: 224520427479474768, guid: ca614fe91158299428332931c2a5738f,
         type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 224520427479474768, guid: ca614fe91158299428332931c2a5738f,
-        type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1505,24 +1500,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114374672317859338, guid: ca614fe91158299428332931c2a5738f,
-        type: 2}
-      propertyPath: m_Text
-      value: Level 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1593987379056968, guid: ca614fe91158299428332931c2a5738f, type: 2}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 224498656119343150, guid: ca614fe91158299428332931c2a5738f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 233
-      objectReference: {fileID: 0}
-    - target: {fileID: 224498656119343150, guid: ca614fe91158299428332931c2a5738f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000019073
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca614fe91158299428332931c2a5738f, type: 2}
