@@ -9,45 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1098937126370948}
+  m_RootGameObject: {fileID: 1056273756535690}
   m_IsPrefabAsset: 1
---- !u!1 &1098937126370948
+--- !u!1 &1056273756535690
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4345808092968478}
-  - component: {fileID: 212519013643077602}
-  - component: {fileID: 61337651744788910}
-  - component: {fileID: 114847622503478984}
+  - component: {fileID: 4696649516146634}
+  - component: {fileID: 212300045355525836}
+  - component: {fileID: 61927824603304736}
+  - component: {fileID: 114718064510138938}
   m_Layer: 0
-  m_Name: BreakableBrick
-  m_TagString: Breakable
+  m_Name: Brick
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4345808092968478
+--- !u!4 &4696649516146634
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098937126370948}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.17, y: 8.5, z: 0}
+  m_GameObject: {fileID: 1056273756535690}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.54, y: 9.13, z: -0.021033661}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61337651744788910
+--- !u!61 &61927824603304736
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098937126370948}
+  m_GameObject: {fileID: 1056273756535690}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -67,26 +67,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114847622503478984
+--- !u!114 &114718064510138938
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098937126370948}
+  m_GameObject: {fileID: 1056273756535690}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80ee39a559b6d934fbe840aa62c47fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   crackSound: {fileID: 8300000, guid: 3a966b61d831c3e4489e54cb1ad44f8f, type: 3}
-  explosionVFX: {fileID: 0}
-  level: {fileID: 0}
---- !u!212 &212519013643077602
+  explosionVFX: {fileID: 1392595293805420, guid: 7079e5ca0a3aa564f9ecdbf42ad54c8e,
+    type: 2}
+  level: {fileID: 114796539114370754, guid: fb1c56f119dc69844bb14e25a9ee60cc, type: 2}
+--- !u!212 &212300045355525836
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098937126370948}
+  m_GameObject: {fileID: 1056273756535690}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -117,7 +118,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 11c36ca618bfc4747a952775a0315fc9, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

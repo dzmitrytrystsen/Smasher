@@ -13,20 +13,14 @@ public class BrickScript : MonoBehaviour
 
     private void Start()
     {
-        level = FindObjectOfType<LevelScript>(); // So after pressing Play, Engine will find and add needed object itself
-        level.CountBreakableBricks();
+            level.CountBreakableBricks();
+            level = FindObjectOfType<LevelScript>(); // So after pressing Play, Engine will find and add needed object itself
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (tag == "Breakable")
             DestroyBlock();
-    }
-
-    public void TriggerExplosion()
-    {
-        GameObject explosion = Instantiate(explosionVFX, transform.position, transform.rotation);
-        Destroy(explosion, 1f);
+            TriggerExplosion();
     }
 
     public void DestroyBlock()
@@ -34,6 +28,11 @@ public class BrickScript : MonoBehaviour
         AudioSource.PlayClipAtPoint(crackSound, Camera.main.transform.position);
         Destroy(gameObject);
         level.SubtractBreakableBricks();
-        TriggerExplosion();
+    }
+
+    public void TriggerExplosion()
+    {
+        GameObject explosion = Instantiate(explosionVFX, transform.position, transform.rotation);
+        Destroy(explosion, 1f);
     }
 }

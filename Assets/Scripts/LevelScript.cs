@@ -18,7 +18,7 @@ public class LevelScript : MonoBehaviour
 
     public void CountBreakableBricks()
     {
-        breakableBricks++;
+            breakableBricks++;
     }
 
     public void SubtractBreakableBricks()
