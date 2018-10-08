@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.UIElements.GraphView;
-using UnityEngine;
-using Object = System.Object;
+﻿using UnityEngine;
 
 public class BrickScript : MonoBehaviour
 {

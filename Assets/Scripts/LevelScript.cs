@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelScript : MonoBehaviour
@@ -13,7 +11,7 @@ public class LevelScript : MonoBehaviour
 
     public void Update()
     {
-        BricksCounterText.text = ("Briks left: " + breakableBricks);
+        BricksCounterText.text = ("Briks left: " + breakableBricks.ToString());
     }
 
     public void CountBreakableBricks()
