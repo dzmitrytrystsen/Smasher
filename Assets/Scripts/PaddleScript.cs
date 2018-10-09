@@ -17,9 +17,21 @@ public class PaddleScript : MonoBehaviour
 	
 	void Update ()
 	{
-		mousePos = Input.mousePosition.x / Screen.width * screenWidthInUnits;
         Vector2 paddlePos = new Vector2(mousePos, transform.position.y);
-	    paddlePos.x = Mathf.Clamp(mousePos, minScreenSizeInUnits, maxScreenSizeInUnits);
+	    paddlePos.x = Mathf.Clamp(GetXPos(), minScreenSizeInUnits, maxScreenSizeInUnits);
 	    transform.position = paddlePos;
 	}
+
+    public float GetXPos()
+    {
+        if (FindObjectOfType<GameStatus>().IsAutoplayEnabled())
+        {
+            return FindObjectOfType<BallScript>().transform.position.x;
+        }
+
+        else
+        {
+            return Input.mousePosition.x / Screen.width * screenWidthInUnits;
+        }
+    }
 }

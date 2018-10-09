@@ -4,7 +4,6 @@ public class BrickScript : MonoBehaviour
 {
     [SerializeField] public AudioClip crackSound;
     [SerializeField] public GameObject explosionVFX;
-    [SerializeField] public int maxHits = 3;
     [SerializeField] public Sprite[] damageSprite;
 
     // Cached reference
@@ -27,6 +26,8 @@ public class BrickScript : MonoBehaviour
     public void HitsLogic()
     {
         timesHit++;
+        int maxHits = damageSprite.Length + 1;
+
 
         if (timesHit >= maxHits)
         {
@@ -43,7 +44,16 @@ public class BrickScript : MonoBehaviour
     private void ShowNextSprite()
     {
         int spriteIndex = timesHit - 1;
-        GetComponent<SpriteRenderer>().sprite = damageSprite[spriteIndex];
+
+        if (damageSprite[spriteIndex] != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = damageSprite[spriteIndex];
+        }
+
+        else
+        {
+            Debug.LogError("Brick sprite is missing" + gameObject.name);
+        }
     }
 
     public void DestroyBlock()

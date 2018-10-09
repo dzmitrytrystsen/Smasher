@@ -8,18 +8,21 @@ public class BallScript : MonoBehaviour
     [SerializeField] public float bounceBallX = -2f;
     [SerializeField] public float bounceBallY = 15f;
     [SerializeField] public AudioClip[] fireballSounds;
+    [SerializeField] public float randomFactor = 0.5f;
 
     public Vector2 paddleToBallVector;
     public bool hasStarted = false;
 
     // Cached components references
     public AudioSource myAudioSource;
+    public Rigidbody2D cachedRigidbody2D;
 
     void Start ()
     {
         paddleToBallVector = transform.position;
         myAudioSource = GetComponent<AudioSource>();
-        Destroy(GameObject.Find("Canvas"), 3f);
+        Destroy(GameObject.Find("Canvas"), 3f); // Don't forget that it's string
+        cachedRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     void Update ()
@@ -41,17 +44,20 @@ public class BallScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(bounceBallX, bounceBallY);
-            hasStarted = true;
+           cachedRigidbody2D.velocity = new Vector2(bounceBallX, bounceBallY);
+           hasStarted = true;
         }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 randomVelocity = new Vector2(Random.Range(0f, randomFactor), Random.Range(0f, randomFactor));
+
         if (hasStarted)
         {
             AudioClip clips = fireballSounds[Random.Range(0, fireballSounds.Length)];
             myAudioSource.PlayOneShot(clips);
+            cachedRigidbody2D.velocity += randomVelocity;
         }
     }
 }

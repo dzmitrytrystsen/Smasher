@@ -3,6 +3,7 @@
 public class GameStatus : MonoBehaviour
 {
     [Range(1f, 3f)] [SerializeField] public float gameSpeed = 1f;
+    [SerializeField] public bool isAutoplayEnabled;
 
     //How to save data from the prev scene
     //But don't forget to child all text you need under GameStatus object
@@ -24,4 +25,9 @@ public class GameStatus : MonoBehaviour
 	{
 	    Time.timeScale = gameSpeed;
 	}
+
+    public bool IsAutoplayEnabled()
+    {
+        return isAutoplayEnabled;
+    }
 }
